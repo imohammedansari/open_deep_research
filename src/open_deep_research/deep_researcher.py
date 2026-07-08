@@ -52,6 +52,9 @@ from open_deep_research.utils import (
     think_tool,
 )
 
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name="open-deep-research", monocle_exporters_list="file")
+
 # Initialize a configurable model that we will use throughout the agent
 configurable_model = init_chat_model(
     configurable_fields=("model", "max_tokens", "api_key"),
